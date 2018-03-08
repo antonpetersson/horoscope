@@ -59,7 +59,14 @@
         if($month == $horoscopes["piscesFM"] && $day >= $horoscopes["piscesFD"] || $month == $horoscopes["piscesLM"] && $day <= $horoscopes["piscesLD"]){          
             $myHoroscope = "Fisk";
         }
+            
+        if(!isset($_SESSION["myHoroscope"])){
             $_SESSION["myHoroscope"] = $myHoroscope;
+            echo "Add: True</br>";
+        }
+        else{
+            echo "Add: False</br>";
+        }
     }
 
 ?>
