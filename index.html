@@ -6,19 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Mina|Raleway" rel="stylesheet"> 
     
     <title>Document</title>
 </head>
 <body>
-
-   
-            Födelsenummer:  <input type="number" name="bDate" id="bDate"><br>
+ 
+        <div id="bDateBox">
+           <div id="bDateText"> Födelsenummer: </div>  <input type="number" name="bDate" id="bDate">
+        </div>
+        <div id="printedHoroscope"></div>
+        
             <button name="saveHoroscope"   id="saveHoroscope"   onclick="saveHoroscope()">   Spara mitt horoskop     </button>
-            <button name="updateHoroscope" id="updateHoroscope" onclick="updateHoroscope()"> Uppdatera mitt horoskop </button>
-            <button name="deleteHoroscope" id="deleteHoroscope" onclick="deleteHoroscope()"> Radera mitt horoskop    </button>
+            <div id="buttonBox">
+                <button name="updateHoroscope" id="updateHoroscope" onclick="updateHoroscope()"> Uppdatera mitt horoskop </button>
+                <button name="deleteHoroscope" id="deleteHoroscope" onclick="deleteHoroscope()"> Radera mitt horoskop    </button>
+            </div>
+          
+          <!-- <div id="trueFalseCheck"></div> -->
 
-          <div id="printedHoroscope"></div>
-          <div id="trueFalseCheck"></div>
-    <script src="./script.js"></script>  
+
+
+<script src="./script.js"></script>  
 </body>
 </html>
