@@ -2,10 +2,11 @@ body{
     height: 85vh;
     display: grid;
     grid-template-columns:  auto 300px auto;
-    grid-template-rows: 100px 300px 50px;
+    grid-template-rows: 100px 165px 200px 50px;
     grid-template-areas: 
     "bDateBox bDateBox bDateBox"
     ". main ."
+    "textBox textBox textBox"
     "button button button";
     grid-row-gap: 10px;
     align-content: space-between;	
@@ -31,8 +32,7 @@ button{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color: #944743;
-    
+    background-color: #944743;  
 }
     #bDateText{
         text-align: center;
@@ -55,11 +55,21 @@ button{
     grid-area: main;
     text-align: center;
     font-family: 'Mina', sans-serif;
+    
  
 }
+#printedHoroscope h1{
+    padding:0px;
+    margin: 0px;
+}
 #printedHoroscope img{
-    height: 225px;
-    width: 300px;
+    height: 112.5px;
+    width: 150px;
+}
+#horoscopeTextBox{
+    grid-area: textBox;
+    font-family: 'Raleway', sans-serif;
+    
 }
 #trueFalseCheck{
 display: none;
@@ -99,7 +109,9 @@ input[type='number'] {
     body{
         height: 600px;
         grid-template-columns:  50px 300px 50px;
-        grid-template-rows: 100px 300px 50px;
+        grid-template-rows: 100px 165px 200px 50px;
     }
-    
+  
+
+
 }
