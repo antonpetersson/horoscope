@@ -12,12 +12,7 @@
         
         if(isset($_SESSION["myHoroscope"])){
             $_SESSION["myHoroscope"] = checkHoroscope($month, $day);
-            echo "Update: True</br>";
-        }
-        else{
-            echo "Update: False</br>";
-        }
-        
+        }        
     }
 
 ?>

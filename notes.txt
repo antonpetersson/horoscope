@@ -1,0 +1,8 @@
+To DO:
+Fixa så att "enter" sparar/uppdaterar.
+Ta bort sista delen av APIn.
+Kanske fixa så att punkt betyder ny rad ifrån APIn
+
+form med onsubmit returna false.
+	-Funkar inte riktigt som den ska med save
+	-IFsats i saveorUpdate() kanske?

@@ -1,7 +1,11 @@
 $(document).ready(function(){
-
+    firstPage();
 printHoroscope();    
 
+function firstPage(){
+    $("#printedHoroscope").html("<img src='./img/bg.png' class='bgImg'> ");
+    $('#horoscopeTextBox').html("");
+}
 function printHoroscope(){
     $.ajax({
         type: 'GET',
@@ -10,7 +14,7 @@ function printHoroscope(){
     .done(function(data){
         if(data.length !== 0){
             var signName = '<h1>' + data + '</h1>';
-            var signImg  = '<img src="./img/' + data + '.png">';
+            var signImg  = '<img src="./img/' + data + '.png" class="horoscopeImg">';
             var horoscopeAPI = 'http://sandipbgt.com/theastrologer/api/horoscope/' + data + '/today/';
             $('#printedHoroscope').html(signName + signImg);
 
@@ -20,16 +24,21 @@ function printHoroscope(){
             })
             .done(function(data){
             var horoscopeAPIdata = jQuery.parseJSON(data);
-            console.log(horoscopeAPIdata.horoscope);
             $('#horoscopeTextBox').html(horoscopeAPIdata.horoscope);
         
         
             })
-
+            $("#updateHoroscope").show();
+            $("#deleteHoroscope").show();
+            $("#saveHoroscope").hide();
 
 
         }
-
+        else{
+            $("#updateHoroscope").hide();
+            $("#deleteHoroscope").hide();
+            $("#saveHoroscope").show();
+        }
 
 
     })
@@ -43,13 +52,6 @@ saveHoroscope = function(){
             url: "./addHoroscope.php",
             data: {bDate: bDate}
         })
-        .done(function(data){
-            $('#trueFalseCheck').append(data);
-
-            $("#updateHoroscope").show();
-            $("#deleteHoroscope").show();
-            $("#saveHoroscope").hide();
-        })
     }
     printHoroscope();
 }
@@ -62,9 +64,6 @@ updateHoroscope = function(){
             url: "./updateHoroscope.php",
             data: {bDate: bDate}
         })
-        .done(function(data){
-            $('#trueFalseCheck').append(data);  
-        })
     }
     printHoroscope();
 }
@@ -75,16 +74,16 @@ deleteHoroscope = function(){
         type: 'DELETE',
         url: "./deleteHoroscope.php",
     })
-    .done(function(data){
-        $('#trueFalseCheck').append(data);
-
-        $("#updateHoroscope").hide();
-        $("#deleteHoroscope").hide();
-        $("#saveHoroscope").show();
-    })
     printHoroscope();
+    firstPage();
 }
 
 
+$("#bDate").keyup(function(event) {
+    if (event.keyCode === 13) {
+            updateHoroscope();
+            saveHoroscope();
+    }
+});
 
 });

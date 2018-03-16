@@ -62,17 +62,17 @@ button{
     padding:0px;
     margin: 0px;
 }
-#printedHoroscope img{
+.bgImg{
+    margin-top: 50px;
+    width: 100%;
+}
+.horoscopeImg{
     height: 112.5px;
     width: 150px;
 }
 #horoscopeTextBox{
     grid-area: textBox;
     font-family: 'Raleway', sans-serif;
-    
-}
-#trueFalseCheck{
-display: none;
 }
 #buttonBox{
     grid-area: button;
